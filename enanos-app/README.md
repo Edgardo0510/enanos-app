@@ -1,11 +1,27 @@
-# Sample Snack app
+# Enanos App
 
-Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!
+App en React Native (Expo / Snack) que consume el backend de Enanos: permite crear un Enano
+(nombre y edad), verlos en una lista, y eliminarlos con confirmación previa.
 
-When you're ready to see everything that Expo provides (or if you want to use your own editor) you can **Download** your project and use it with [expo cli](https://docs.expo.dev/get-started/installation/#expo-cli)).
+Parte del trabajo práctico de la materia Aplicaciones Móviles.
+Repositorio del backend: https://github.com/Edgardo0510/enanos-backend
 
-All projects created in Snack are publicly available, so you can easily share the link to this project via link, or embed it on a web page with the `<>` button.
+## Cómo correrlo
 
-If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.dev/c/expo-dev-tools/61) or [Discord](https://chat.expo.dev/).
+1. Abrir el proyecto en [Expo Snack](https://snack.expo.dev) importando este repositorio,
+   o copiar el contenido de `App.js` a un Snack nuevo.
 
-Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack).
+2. Configurar la URL del backend: en `App.js`, al principio del archivo, editar la constante:
+```js
+   const BACKEND_URL = 'http://TU_IP_LOCAL:3000';
+```
+   Reemplazar `TU_IP_LOCAL` por la IP local de la compu donde corre el backend
+   (se obtiene con `ipconfig` en Windows o `ifconfig` en Mac/Linux). El celular
+   debe estar conectado a la misma red WiFi que esa compu.
+
+3. Con el backend corriendo (`npm run dev` en el repo `enanos-backend`), abrir la app:
+   - Escaneando el código QR desde Expo Go en el celular, o
+   - Usando el simulador "My Device" de Snack.
+
+   Nota: la vista previa "Web" de Snack no funciona porque bloquea pedidos `http`
+   desde una página `https` (mixed content) — probar siempre desde el celular con Expo Go.
